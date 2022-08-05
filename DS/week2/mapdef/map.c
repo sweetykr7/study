@@ -1,15 +1,27 @@
 #include "mapdef.h"
 
+// static int map[8][8] = {
+//         { -1, 0, 1, 1, 1, 1, 1, 1 },
+//         { 1, 0, 0, 0, 0, 0, 0, 1 },
+// 		{ 1, 1, 1, 0, 1, 1, 1, 1 },
+// 		{ 1, 1, 1, 0, 1, 1, 1, 1 },
+// 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+// 		{ 1, 0, 1, 1, 1, 1, 1, 1 },
+// 		{ 1, 0, 0, 0, 0, 0, 0, 0 },
+// 		{ 1, 1, 1, 1, 1, 1, 1, -2 }
+//     };
+
 static int map[8][8] = {
-        { -1, 0, 1, 1, 1, 1, 1, 1 },
+        { -2, 0, 1, 1, 1, 1, 1, 1 },
         { 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 1, 1, 0, 1, 1, 1, 1 },
 		{ 1, 1, 1, 0, 1, 1, 1, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 1, 1, 1, 1, 1, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 0 },
-		{ 1, 1, 1, 1, 1, 1, 1, -2 }
+		{ 1, 1, 1, 1, 1, 1, 1, -1 }
     };
+
 
 static int DIREC[4][2] = {
 	{0, -1},	
@@ -147,8 +159,6 @@ void findPath(int mazeArray[HEIGHT][WIDTH], MapPosition startPos, MapPosition en
 {
 	int	test;
 
-	if (startPos.x == 3 && startPos.y == 4)
-		test = 0;
 	if (mazeArray[endPos.x][endPos.y] == -2)
 	{
 		pushLSMapPosition(pStack, endPos);
@@ -208,11 +218,11 @@ int	main(void)
 	pStack = createLinkedStack();
 	temp = createLinkedStack();
 	pStack->final_y = 7;
-	sPos.x = 0;
-	sPos.y = 0;
+	sPos.x = 7;
+	sPos.y = 7;
 	sPos.direction = DIREC[1];
-	ePos.x = 1;
-	ePos.y = 0;
+	ePos.x = 7;
+	ePos.y = 6;
 	ePos.direction = DIREC[1];
 	pushLSMapPosition(pStack, sPos);
 	findPath(map, sPos, ePos, pStack);
