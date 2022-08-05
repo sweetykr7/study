@@ -221,8 +221,3 @@ int	main(void)
 	showPath(temp, map);
 	//displayStack(temp);
 }
-
-
-
-//git test;
-//git test;
