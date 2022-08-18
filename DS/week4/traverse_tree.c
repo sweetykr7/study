@@ -31,4 +31,4 @@ void postorderTraverse(BinTreeNode *pNode)
 	printf("Node data is %c\n", pNode->data);
 }
 
-//test
+//test 222
