@@ -84,14 +84,14 @@ void deleteBinTree(BinTree* pBinTree)
 	free(pBinTree);
 }
 
-void display_bintree(BinTreeNode *root, int level)
+void display_bintree(BinTreeNode *root, BinTreeNode *parent, int level)
 {
 	BinTreeNode *node;
 
 	node = root;
-	printf("node : %d ==== level %d\n", node->data, level);
+	printf("node : %d, parent node : %d ==== level %d\n", node->data, parent->data, level);
 	if (node->pLeftChild)
-		display_bintree(node->pLeftChild, level + 1);
+		display_bintree(node->pLeftChild, node, level + 1);
 	if (node->pRightChild)
-		display_bintree(node->pRightChild, level + 1);
+		display_bintree(node->pRightChild, node, level + 1);
 }

@@ -2,6 +2,9 @@
 #include "bst.h"
 #include <stdlib.h>
 #include <stdio.h>
+//#include "bintree.c"
+//#include "bst.c"
+//#include "delete_bst.c" 
 
 int main(void)
 {
@@ -36,20 +39,24 @@ int main(void)
 	insertLeftChildNodeBT(node->pRightChild, *right_node);
 	right_node->data = 27;
 	insertRightChildNodeBT(node->pRightChild, *right_node);
-	display_bintree(tree->pRootNode, 0);
+	display_bintree(tree->pRootNode, tree->pRootNode, 0);
 	printf("====================================\n");
 	temp_node = BinSearch(node, 10);
 	printf("search test : %d\n", temp_node->data);
 	printf("====================================\n");
-	insert_bst(node, 11);
-	display_bintree(tree->pRootNode, 0);
 	printf("====================================\n");
-	delete_bst(node, 3);
+	printf("insert_test : 11\n");
+	insert_bst(node, 11);
+	display_bintree(tree->pRootNode, tree->pRootNode, 0);
+	printf("====================================\n");
+	printf("delete_test : 3\n");
+	//delete_bst(node, 3);
+	delete_bst(node, 15);
+	display_bintree(tree->pRootNode, tree->pRootNode, 0);
 	// printf("test node : %d\n", node->pRightChild->data);
 	// printf("test node : %d\n", node->pRightChild->pLeftChild->data);
 	// printf("test node : %d\n", node->pRightChild->pLeftChild->pLeftChild->data);
 	// printf("test node : %d\n", node->pRightChild->pLeftChild->pLeftChild->pRightChild->data);
 	printf("====================================\n");
-	display_bintree(tree->pRootNode, 0);
 	return (0);
 }

@@ -28,7 +28,7 @@ void	preorderTraverse(BinTreeNode *pNode);
 void	inorderTraverse(BinTreeNode *pNode);
 void	postorderTraverse(BinTreeNode *pNode);
 
-void display_bintree(BinTreeNode *root, int level);
+void display_bintree(BinTreeNode *root, BinTreeNode *parent, int level);
 
 #endif
 
