@@ -7,8 +7,8 @@ class Dollar
 		};
 
 		Dollar times(int multiplier){
-			_amount = _amount * multiplier; // $5 X 2 = $10 
-			return NULL;
+			// _amount = _amount * multiplier; // $5 X 2 = $10 
+			return Dollar(_amount * multiplier); // Dollar 부작용?
 		};
 		int _amount;
 
