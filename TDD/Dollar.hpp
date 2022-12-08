@@ -6,8 +6,9 @@ class Dollar
 			_amount = amount;
 		};
 
-		void times(int multiplier){
+		Dollar times(int multiplier){
 			_amount = _amount * multiplier; // $5 X 2 = $10 
+			return NULL;
 		};
 		int _amount;
 
